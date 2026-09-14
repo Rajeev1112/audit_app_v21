@@ -1,0 +1,97 @@
+<div>
+	<svg class="SEARCH_BG" viewBox="0 -2 1280 77">
+		<path id="SEARCH_BG" d="M 0 -2 L 1280 -1.299999952316284 L 1280 75 L 0 75 L 0 -2 Z">
+		</path>
+	</svg>
+	<div id="Search_Criteria">
+		<span>Search Criteria</span>
+	</div>
+	<div id="Enter_the_Social_Security_Numb">
+		<span>Enter the Social Security Number and Date Range to locate the claimant<br />and Unemployment Insurance
+			Benefits information.</span>
+	</div>
+	<div id="SS">
+		<svg class="SEARCH_BG_gj" viewBox="0 0 125 32">
+			<path id="SEARCH_BG_gj"
+				d="M 5 0 L 120 0 C 122.7614212036133 0 125 2.238576173782349 125 5 L 125 27 C 125 29.76142311096191 122.7614212036133 32 120 32 L 5 32 C 2.238576173782349 32 0 29.76142311096191 0 27 L 0 5 C 0 2.238576173782349 2.238576173782349 0 5 0 Z">
+			</path>
+		</svg>
+		<div id="Social_Security_">
+			<span>Social Security #</span>
+		</div>
+		<input autofocus type="text" id="ssnNo" value="" name="ssnNo" class="SEARCH_BG_gj" pattern="^d{3}-d{2}-d{4}$"
+			#ssnNo (blur)="ssnNoLostfocus($event)" />
+		<div id="n_00-00-0000">
+			<span></span>
+		</div>
+	</div>
+	<div id="START">
+		<svg class="Input_BG">
+			<rect id="Input_BG" rx="5" ry="5" x="0" y="0" width="125" height="32">
+			</rect>
+		</svg>
+		<input type="date" id="startDate" name="startDate" value="" max="9999-12-31" class="Input_BG" #startDate>
+		<div id="n_7072023">
+			<span></span>
+		</div>
+		<div id="Start_Date">
+			<span>Start Date</span>
+		</div>
+		<!-- <svg class="cal-bg">
+            <rect id="cal-bg" rx="5" ry="5" x="0" y="0" width="25" height="25">
+            </rect>
+        </svg> -->
+		<div id="calendar-days">
+			<span></span>
+		</div>
+	</div>
+	<div id="END">
+		<svg class="Input_BG_gt">
+			<rect id="Input_BG_gt" rx="5" ry="5" x="0" y="0" width="125" height="32">
+			</rect>
+		</svg>
+		<div id="n_0052023">
+			<span></span>
+		</div>
+		<div id="End_Date">
+			<span>End Date</span>
+		</div>
+		<!-- <svg class="cal-bg_gw">
+            <rect id="cal-bg_gw" rx="5" ry="5" x="0" y="0" width="25" height="25">
+            </rect>
+        </svg> -->
+		<input type="date" id="endDate" name="endDate" max="9999-12-31" class="Input_BG" value="" #endDate>
+
+		<div id="calendar-days_gx">
+			<span></span>
+		</div>
+	</div>
+	<div id="Search_Btn" (click)="onSearch(ssnNo.value, startDate.value, endDate.value)" style="cursor: pointer;">
+		<svg class="GO_BTN">
+			<rect id="GO_BTN" rx="5" ry="5" x="0" y="0" width="180" height="31">
+			</rect>
+		</svg>
+		<svg class="Polygon_1" viewBox="0 0 8 8">
+			<path id="Polygon_1" d="M 4.5 0 L 9 9 L 0 9 Z">
+			</path>
+		</svg>
+		<svg class="Polygon_1" viewBox="0 0 8 8">
+			<path id="Polygon_1" d="M 4.5 0 L 9 9 L 0 9 Z">
+			</path>
+		</svg>
+		<div id="Search_for_Claimant">
+			<span>Search for Claimant</span>
+		</div>
+	</div>
+	<div id="Clear_Btn" (click)="onClear()" style="cursor: pointer;">
+		<!-- <button class="GO_BTN_g" type="button" title="Clear" (click)="onClear()"> -->
+		<svg class="GO_BTN_g" (click)="onClear()">
+			<rect id="GO_BTN_g" rx="5" ry="5" x="0" y="0" width="62" height="32" (click)="onClear()">
+			</rect>
+		</svg>
+		<div id="Clear" (click)="onClear()">
+			<span>Clear</span>
+		</div>
+		<!-- </button>         -->
+	</div>
+</div>

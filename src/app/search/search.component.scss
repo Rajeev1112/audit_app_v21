@@ -1,0 +1,375 @@
+#SEARCH_BG {
+	fill: rgba(241, 241, 241, 1);
+}
+
+.SEARCH_BG {
+	overflow: visible;
+	position: absolute;
+	width: 100%;
+	height: 77px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Enter_the_Social_Security_Numb {
+	left: 19px;
+	top: 33px;
+	position: absolute;
+	overflow: visible;
+	width: 409px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Search_Criteria {
+	position: relative;
+	left: 2%;
+	overflow: visible;
+	width: 12%;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#SS {
+	left: 45%;
+	position: absolute;
+	width: 10%;
+	height: 49px;
+	top: 15px;
+	overflow: visible;
+}
+
+#SEARCH_BG_gj {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(183, 183, 183, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.SEARCH_BG_gj {
+	overflow: visible;
+	position: absolute;
+	width: 125px;
+	height: 32px;
+	left: 0px;
+	top: 15px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#n_00-00-0000 {
+	left: 17px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Social_Security_ {
+	left: 0px;
+	top: -4px;
+	position: absolute;
+	overflow: visible;
+	width: 107px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#START {
+	position: absolute;
+	width: 125px;
+	height: 49px;
+	left: 718px;
+	top: 15px;
+	overflow: visible;
+}
+
+#Input_BG {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(139, 139, 139, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.Input_BG {
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	height: 32px;
+	left: 0px;
+	top: 15px;
+}
+
+#n_7072023 {
+	left: 10px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 74px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Start_Date {
+	left: 0px;
+	top: -4px;
+	position: absolute;
+	overflow: visible;
+	width: 65px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#cal-bg {
+	fill: rgba(5, 134, 174, 1);
+}
+
+.cal-bg {
+	position: absolute;
+	overflow: visible;
+	width: 25px;
+	height: 25px;
+	left: 96px;
+	top: 20px;
+}
+
+#calendar-days {
+	left: 102px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 14px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Font Awesome 6 Free;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#END {
+	position: absolute;
+	width: 126px;
+	height: 49px;
+	left: 853px;
+	top: 15px;
+	overflow: visible;
+}
+
+#Input_BG_gt {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(139, 139, 139, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.Input_BG_gt {
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	height: 32px;
+	left: 1px;
+	top: 15px;
+}
+
+#n_0052023 {
+	left: 11px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#End_Date {
+	left: 0px;
+	top: -4px;
+	position: absolute;
+	overflow: visible;
+	width: 59px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#cal-bg_gw {
+	fill: rgba(5, 134, 174, 1);
+}
+
+.cal-bg_gw {
+	position: absolute;
+	overflow: visible;
+	width: 25px;
+	height: 25px;
+	left: 97px;
+	top: 20px;
+}
+
+#calendar-days_gx {
+	left: 103px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 14px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Font Awesome 6 Free;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#Search_Btn {
+	position: absolute;
+	width: 186px;
+	height: 32px;
+	left: 995px;
+	top: 30px;
+	overflow: visible;
+	// border-color: blue;
+	// border-style: solid;
+}
+
+#Search_Btn_1 {
+	position: absolute;
+	width: 186px;
+	height: 32px;
+	left: 995px;
+	top: 30px;
+	overflow: visible;
+	// border-color: blue;
+	// border-style: solid;
+}
+
+#GO_BTN {
+	fill: rgba(5, 134, 174, 1);
+}
+
+.GO_BTN {
+	position: absolute;
+	overflow: visible;
+	width: 186px;
+	height: 32px;
+	left: 0px;
+	top: 0px;
+}
+
+#Polygon_1 {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.Polygon_1 {
+	overflow: visible;
+	position: absolute;
+	width: 9px;
+	height: 9px;
+	transform: translate(-1075px, -110px) matrix(1, 0, 0, 1, 1238.5, 121.5) rotate(90deg);
+	transform-origin: center;
+	left: -10px;
+	top: 0px;
+}
+
+#Search_for_Claimant {
+	left: 14px;
+	top: 4px;
+	position: absolute;
+	overflow: visible;
+	width: 138px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#Clear_Btn {
+	position: absolute;
+	width: 62px;
+	height: 32px;
+	left: 1190px;
+	top: 30px;
+	overflow: visible;
+}
+
+#GO_BTN_g {
+	fill: rgba(128, 128, 128, 1);
+}
+
+.GO_BTN_g {
+	position: absolute;
+	overflow: visible;
+	width: 62px;
+	height: 32px;
+	left: 0px;
+	top: 0px;
+}
+
+#Clear {
+	left: 12px;
+	top: 4px;
+	position: absolute;
+	overflow: visible;
+	width: 38px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(255, 255, 255, 1);
+}

@@ -1,0 +1,23 @@
+export interface iProcessedWeeklyDetails {
+    processedCertificationIdentifier: Number,
+    payableAmount: Number,
+    adjustmentCode: string,
+    paymentDate: Date,
+    benefitReleaseDate: Date,
+    transactionCode: string,
+    typeOfTransaction: string,
+    heldCertifications: string,
+    maxEarnings: string,
+    workersCOMPReduction: Number,
+    grossAmount: Number,
+    pensionReduction: Number,
+    childSupportIntercept: Number,
+    stateOffset: Number,
+    iroraOffset: Number,
+    forfeitDays: string,
+    forfeitWeek: string,
+    paidDays: string,
+    federalWithholdingTaxes: number,
+    stateWithholdingTax: string,
+    regularBenefits: string
+}

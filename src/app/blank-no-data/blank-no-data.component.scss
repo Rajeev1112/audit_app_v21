@@ -1,0 +1,66 @@
+#DETAILS_BG {
+	fill: rgba(203, 203, 203, 1);
+}
+
+.DETAILS_BG {
+	overflow: visible;
+	position: absolute;
+	width: 1280px;
+	height: 125px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#DETAILS_BG_jv {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.DETAILS_BG_jv {
+	overflow: visible;
+	position: absolute;
+	width: 1240px;
+	height: 100px;
+	left: 20px;
+	top: 12px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#ADDRESS_BLOCK {
+	position: absolute;
+	width: 170px;
+	height: 51px;
+	left: 382px;
+	top: 45px;
+	overflow: visible;
+}
+
+#n_23_Address {
+	left: 0px;
+	top: 18px;
+	position: absolute;
+	overflow: visible;
+	width: 171px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Current_Address_1 {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 105px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}

@@ -1,0 +1,583 @@
+/* ====== PRINT PAGE LAYOUT - GRID BASED ALIGNMENT WITH PROPER LEFT-RIGHT ALIGNMENT ====== */
+
+.print-container {
+    width: 100%;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: white;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* ====== HEADER ====== */
+.print-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 2px solid #0b5584;
+    margin-bottom: 20px;
+
+    h1 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #0b5584;
+        margin: 0 0 4px 0;
+    }
+
+    h2 {
+        font-size: 14px;
+        font-weight: normal;
+        color: #666;
+        margin: 0;
+    }
+}
+
+.header-logo {
+    text-align: left;
+}
+
+.print-info {
+    text-align: right;
+    font-size: 11px;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* ====== CLAIMANT SECTION ====== */
+.claimant-section {
+    margin-bottom: 20px;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 4px;
+
+    h3 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #0b5584;
+        margin: 0 0 12px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 6px;
+    }
+}
+
+.claimant-details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 8px;
+    align-items: start;
+}
+
+/* ====== DETAIL ITEM - INLINE DISPLAY (LABEL: VALUE) ====== */
+.detail-item {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: baseline;
+    min-width: 0;
+
+    .label {
+        flex-shrink: 0;
+        font-size: 11px;
+        font-weight: 600;
+        color: #666;
+
+        &::after {
+            content: ' ';
+        }
+    }
+
+    .value {
+        flex: 1;
+        font-size: 12px;
+        color: #000;
+        font-weight: 500;
+        word-break: break-word;
+
+        &.bold {
+            font-weight: 700;
+        }
+    }
+}
+
+/* ====== CLAIMS SECTION ====== */
+.claims-section {
+    margin-bottom: 20px;
+
+    h3 {
+        font-size: 14px;
+        font-weight: bold;
+        color: #0b5584;
+        margin: 0 0 8px 0;
+        border-bottom: 2px solid #0b5584;
+        padding-bottom: 6px;
+    }
+}
+
+.section-subtitle {
+    font-size: 12px;
+    color: #666;
+    margin: 0 0 12px 0;
+    font-weight: normal;
+
+    strong {
+        font-weight: 600;
+        color: #000;
+    }
+}
+
+/* ====== CLAIMS LIST ====== */
+.claims-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.claim-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px;
+    page-break-inside: avoid;
+    background: white;
+
+    &:not(:last-child) {
+        margin-bottom: 12px;
+    }
+}
+
+/* ====== CLAIM SUMMARY - 5 COLUMN LAYOUT ====== */
+.claim-summary {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.5fr 0.5fr;
+    column-gap: 16px;
+    row-gap: 8px;
+    align-items: start;
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    align-items: baseline;
+
+    .label {
+        flex-shrink: 0;
+        font-size: 11px;
+        font-weight: 600;
+        color: #666;
+    }
+
+    .value {
+        flex: 1;
+        font-size: 12px;
+        color: #000;
+        font-weight: 600;
+    }
+}
+
+/* ====== CLAIM DETAILS - 2 COLUMN GRID ====== */
+.claim-details {
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+
+    h4 {
+        font-size: 12px;
+        font-weight: bold;
+        color: #0b5584;
+        margin: 0 0 8px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+    }
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+    row-gap: 8px;
+    align-items: start;
+}
+
+/* ====== CLAIM HISTORY ====== */
+.claim-history {
+    margin-bottom: 12px;
+    page-break-inside: avoid;
+
+    h4 {
+        font-size: 12px;
+        font-weight: bold;
+        color: #0b5584;
+        margin: 0 0 8px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+    }
+
+    .no-data {
+        font-size: 12px;
+        color: #999;
+        font-style: italic;
+        margin: 0;
+        padding: 8px 0;
+    }
+}
+
+.history-item {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 3px;
+    page-break-inside: avoid;
+}
+
+.history-header {
+    h5 {
+        font-size: 11px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 6px 0;
+    }
+}
+
+.history-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 8px;
+    align-items: start;
+}
+
+/* ====== PROCESSED DETAILS - 4 COLUMN GRID ====== */
+.processed-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    page-break-inside: avoid;
+
+    h6 {
+        font-size: 11px;
+        font-weight: bold;
+        color: #333;
+        margin: 0 0 8px 0;
+    }
+}
+
+.processed-item {
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    page-break-inside: avoid;
+}
+
+.processed-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 12px;
+    row-gap: 8px;
+    align-items: start;
+
+    .detail-item {
+        .label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .value {
+            font-size: 11px;
+            color: #000;
+            font-weight: 500;
+        }
+    }
+}
+
+/* ====== ADDITIONAL DATA SECTIONS ====== */
+.additional-data {
+    margin-top: 12px;
+    page-break-inside: avoid;
+}
+
+.data-section {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 3px;
+    page-break-inside: avoid;
+
+    h5 {
+        font-size: 11px;
+        font-weight: bold;
+        color: #0b5584;
+        margin: 0 0 8px 0;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 4px;
+    }
+}
+
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 8px;
+    align-items: start;
+
+    .detail-item {
+        .label {
+            font-size: 10px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .value {
+            font-size: 11px;
+            color: #000;
+            font-weight: 500;
+        }
+    }
+}
+
+/* ====== NO CLAIMS MESSAGE ====== */
+.no-claims {
+    padding: 20px;
+    text-align: center;
+    background: #f0f0f0;
+    border-radius: 4px;
+    margin: 20px 0;
+
+    h3 {
+        font-size: 14px;
+        color: #666;
+        margin: 0 0 8px 0;
+    }
+
+    p {
+        font-size: 12px;
+        color: #999;
+        margin: 0;
+    }
+}
+
+/* ====== FOOTER ====== */
+.print-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #0b5584;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    flex: 1;
+    font-size: 11px;
+    color: #666;
+
+    p {
+        margin: 0;
+    }
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.print-controls {
+    display: flex;
+    gap: 10px;
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+        font-weight: 600;
+        border: 1px solid #0b5584;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &.print-button {
+            background: #0b5584;
+            color: white;
+
+            &:hover {
+                background: #083f5c;
+            }
+        }
+
+        &.close-button {
+            background: white;
+            color: #0b5584;
+
+            &:hover {
+                background: #f5f5f5;
+            }
+        }
+    }
+}
+
+/* ====== LOADING & ERROR STATES ====== */
+.loading-state,
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0b5584;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.error-state h3 {
+    font-size: 16px;
+    color: #d72828;
+    margin: 0 0 8px 0;
+}
+
+.error-state p {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 16px 0;
+}
+
+.back-button {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #0b5584;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background: #083f5c;
+    }
+}
+
+/* ====== PRINT MEDIA STYLES ====== */
+@media print {
+    .print-container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .print-controls {
+        display: none;
+    }
+
+    .claim-item,
+    .data-section,
+    .history-item,
+    .processed-item {
+        page-break-inside: avoid;
+    }
+
+    .claim-details,
+    .claim-history {
+        page-break-inside: avoid;
+    }
+
+    .section-header {
+        page-break-after: avoid;
+    }
+
+    /* Print-specific spacing */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    @page {
+        margin: 0.5in;
+    }
+
+    /* Ensure all borders and colors print */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* ====== RESPONSIVE ADJUSTMENTS ====== */
+@media (max-width: 768px) {
+    .print-header {
+        grid-template-columns: 1fr;
+    }
+
+    .print-info {
+        text-align: left;
+        margin-top: 8px;
+    }
+
+    .claimant-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .details-grid,
+    .history-details-grid,
+    .data-grid {
+        grid-template-columns: 1fr;
+        column-gap: 12px;
+    }
+
+    .processed-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-right {
+        text-align: left;
+    }
+}

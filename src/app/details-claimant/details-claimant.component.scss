@@ -1,0 +1,174 @@
+#DETAILS_BG {
+	fill: rgba(203, 203, 203, 1);
+}
+
+.DETAILS_BG {
+	overflow: visible;
+	position: absolute;
+	width: 1280px;
+	height: 125px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#DETAILS_BG_g {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.DETAILS_BG_g {
+	overflow: visible;
+	position: absolute;
+	width: 1260px;
+	height: 100px;
+	left: 10px;
+	top: 12px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#PERSON_DETAILS_BG {
+	fill: rgba(11, 85, 132, 1);
+}
+
+.PERSON_DETAILS_BG {
+	overflow: visible;
+	position: absolute;
+	width: 339px;
+	height: 80px;
+	left: 19px;
+	top: 22px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#User_Name {
+	left: 82px;
+	top: 42px;
+	position: absolute;
+	overflow: visible;
+	width: 102px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#user {
+	left: 37px;
+	top: 35px;
+	position: absolute;
+	overflow: visible;
+	width: 41px;
+	height: 40px;
+	white-space: nowrap;
+	font-family: Font Awesome 6 Free Solid;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 34px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#ADDRESS_BLOCK {
+	position: absolute;
+	width: 170px;
+	height: 51px;
+	left: 371px;
+	top: 25px;
+	overflow: visible;
+}
+
+#nTEST_STREET {
+	left: 0px;
+	top: 18px;
+	position: absolute;
+	overflow: visible;
+	width: 171px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Claimant_Address {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 112px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#SSN_123456789 {
+	left: 82px;
+	top: 65px;
+	position: absolute;
+	overflow: visible;
+	width: 103px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#CLAIM_OVERVIEW {
+	position: absolute;
+	width: 178px;
+	height: 18px;
+	left: 1074px;
+	top: 36px;
+	overflow: visible;
+}
+
+#DATA_ITEM_hg {
+	position: absolute;
+	width: 178px;
+	height: 18px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+#Inquiry_Date_ {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 179px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Claimant_Identifier {
+	display: none;
+	left: -69px;
+	top: -5px;
+	position: absolute;
+	overflow: visible;
+	width: 230px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}

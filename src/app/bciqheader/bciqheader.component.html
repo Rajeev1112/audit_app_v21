@@ -1,0 +1,71 @@
+<div>
+	<svg class="HEADER_BG" viewBox="0 0 1280 80">
+		<path id="HEADER_BG" d="M 0 0 L 1280 0 L 1280 80 L 0 80 L 0 0 Z">
+		</path>
+	</svg>
+	<svg class="HEADER_BG_BAR">
+		<rect id="HEADER_BG_BAR" rx="0" ry="0" x="0" y="0" width="1280" height="5">
+		</rect>
+	</svg>
+	<div id="Hamburger_Menu">
+		<svg class="Rectangle_1">
+			<rect id="Rectangle_1" rx="5" ry="5" x="0" y="0" width="35" height="35">
+			</rect>
+		</svg>
+		<div id="fa-bars">
+			<span>bars</span>
+		</div>
+	</div>
+	<div id="Unemployment_Insurance_Benefit">
+		<span>Unemployment Insurance Benefits</span>
+	</div>
+	<div id="Benefit_Claimant_Inquiry_Searc">
+		<span>LDSS Unemployment Services Inquiry</span>
+	</div>
+
+	<div id="UserLogged">
+		<div id="UserLogged_" style="text-align: right;;width:100%;">
+			<span style="text-align: right;width:100%;">{{getUserName()}} </span>
+		</div>
+	</div>
+
+	<div id="User_Divider">
+		<span>&nbsp;</span>
+	</div>
+	<div id="AUDIT" (click)="onAuditClick()" style="cursor: pointer;">
+		<div id="audit">
+			<span style="margin-right: 5px;">📋</span>
+		</div>
+		<div id="Audit_">
+			<span>Audit</span>
+		</div>
+	</div>
+	<div id="LOGOUT" (click)="logout()">
+		<div id="Logout">
+			<span>Logout</span>
+		</div>
+		<div id="right-from-bracket">
+			<span>
+				<svg width="16" height="16" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M1 1L8 1V2L2 2L2 13H8V14H1L1 1ZM10.8536 4.14645L14.1932 7.48614L10.8674 11.0891L10.1326 10.4109L12.358 8L4 8V7L12.2929 7L10.1464 4.85355L10.8536 4.14645Z"
+						fill="#000000" />
+				</svg>
+
+			</span>
+		</div>
+	</div>
+	<div id="PRINT" (click)="printBCIQ()">
+		<div id="print">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer"
+				viewBox="0 0 16 16">
+				<path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+				<path
+					d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z" />
+			</svg>
+		</div>
+		<div id="Print_">
+			<span>Print </span>
+		</div>
+	</div>
+</div>

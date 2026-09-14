@@ -1,0 +1,40 @@
+<svg class="DETAILS_BG" viewBox="0 0 1280 125">
+	<path id="DETAILS_BG" d="M 0 0 L 1280 0 L 1280 125 L 0 125 L 0 0 Z">
+	</path>
+</svg>
+<svg class="DETAILS_BG_g" viewBox="0 0 1260 100">
+	<path id="DETAILS_BG_g" d="M 0 0 L 1260 0 L 1260 100 L 0 100 L 0 0 Z">
+	</path>
+</svg>
+<svg class="PERSON_DETAILS_BG" viewBox="0 0 339 80">
+	<path id="PERSON_DETAILS_BG" d="M 0 0 L 339 0 L 339 80 L 0 80 L 0 0 Z">
+	</path>
+</svg>
+<div id="User_Name">
+	<span>{{this.claimantInfo.firstName}} &nbsp;&nbsp;{{this.claimantInfo.lastName}}</span>
+</div>
+<div id="user" style="text-align: center;vertical-align: top;">
+	<img src="/assets/images/icons8-user-100.png" alt="Cinque Terre" width="41" height="40">
+</div>
+<div id="ADDRESS_BLOCK">
+	<div id="nTEST_STREET">
+		<span> {{this.claimantInfo.claimantAddress}}</span>
+	</div>
+	<div id="Claimant_Address">
+		<span>Claimant Address:</span>
+	</div>
+</div>
+<div id="SSN_123456789">
+	<span>
+		SSN: {{ this.ssnNoFormat(this.claimantInfo.ssn) }}</span>
+</div>
+<div id="CLAIM_OVERVIEW">
+	<div id="DATA_ITEM_hg">
+		<div id="Inquiry_Date_">
+			<span>Inquiry Date: {{this.claimantInfo.todaysDate}}</span>
+		</div>
+		<div id="Claimant_Identifier">
+			<span>Claimant Identifier: {{this.claimantInfo.claimantIdentifier}}</span>
+		</div>
+	</div>
+</div>

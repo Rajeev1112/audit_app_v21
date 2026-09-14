@@ -1,0 +1,66 @@
+<section class="card search-card">
+  <div class="card-header">
+    <div>
+      <h2>Audit Search Criteria</h2>
+      <p>Enter one or more criteria to search audit records.</p>
+    </div>
+    <span class="required-note"><span>*</span> Required fields</span>
+  </div>
+
+  <form [formGroup]="searchForm" (ngSubmit)="searchRequested.emit()" novalidate>
+    <div class="form-grid">
+      <div class="field">
+        <label for="startDate">Start date <span>*</span></label>
+        <input id="startDate" type="date" formControlName="startDate">
+      </div>
+
+      <div class="field">
+        <label for="endDate">End date <span>*</span></label>
+        <input id="endDate" type="date" formControlName="endDate">
+        <small class="error" *ngIf="searchForm.get('endDate')?.hasError('range')">
+          End date must be on or after start date.
+        </small>
+      </div>
+
+      <div class="field field-wide">
+        <label for="applicationName">Application name <span>*</span></label>
+        <input id="applicationName" type="text" formControlName="applicationName">
+      </div>
+
+      <div class="field">
+        <label for="firstName">First name</label>
+        <input id="firstName" type="text" formControlName="firstName" placeholder="First name">
+      </div>
+
+      <div class="field">
+        <label for="lastName">Last name</label>
+        <input id="lastName" type="text" formControlName="lastName" placeholder="Last name">
+      </div>
+
+      <div class="field">
+        <label for="eventType">Event type</label>
+        <select id="eventType" formControlName="eventType" class="form-select">
+          <option value="">-- Select event type --</option>
+          <option *ngFor="let type of eventTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="eventStatus">Event status</label>
+        <select id="eventStatus" formControlName="eventStatus" class="form-select">
+          <option value="">-- Select event status --</option>
+          <option *ngFor="let status of eventStatuses" [value]="status">{{ status }}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="loading">
+        <span class="button-spinner" *ngIf="loading"></span>
+        {{ loading ? 'Searching...' : 'Search' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="resetRequested.emit()">Clear</button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,440 @@
+<div class="print-container">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-state">
+        <div class="loading-spinner"></div>
+        <p>Loading claim details for printing...</p>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error && !loading" class="error-state">
+        <div class="error-icon">⚠️</div>
+        <h3>Unable to Load Print Page</h3>
+        <p>{{ error }}</p>
+        <button (click)="goBack()" class="back-button">Close Window</button>
+    </div>
+
+    <!-- Print Content -->
+    <div *ngIf="!loading && !error" class="print-content">
+        <!-- Print Header -->
+        <header class="print-header">
+            <div class="header-logo">
+                <h1>Unemployment Insurance Benefits</h1>
+                <h2>LDSS Unemployment Services Inquiry - Print Version</h2>
+            </div>
+            <div class="print-info">
+                <div class="print-date">Printed: {{ currentDate | date:'yyyy-MM-dd HH:mm' }}</div>
+                <div class="page-info">Page 1 of 1</div>
+            </div>
+        </header>
+
+        <!-- Claimant Information -->
+        <div class="claimant-section">
+            <h3>Claimant Information</h3>
+            <div class="claimant-details-grid">
+                <div class="detail-item">
+                    <span class="label">Name:</span>
+                    <span class="value">{{ claimantDetails.name || 'N/A' }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">SSN:</span>
+                    <span class="value">{{ claimantDetails.ssn || 'N/A' }}</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">Date Range:</span>
+                    <span class="value">{{ claimantDetails.startDate_UI | date:'yyyy-MM-dd' }} to {{
+                        claimantDetails.endDate_UI | date:'yyyy-MM-dd' }}</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Claims List -->
+        <div class="claims-section" *ngIf="claimantDetails.claimList && claimantDetails.claimList.length > 0">
+            <h3>Claim List</h3>
+            <p class="section-subtitle">Benefits information as of <strong>{{ claimantDetails.startDate_UI |
+                    date:'yyyy-MM-dd' }}</strong> to
+                <strong>{{ claimantDetails.endDate_UI | date:'yyyy-MM-dd' }}</strong>.
+            </p>
+
+            <div class="claims-list">
+                <div *ngFor="let oClaim of claimantDetails.claimList; index as i" class="claim-item">
+                    <!-- Claim Summary -->
+                    <div class="claim-summary">
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <span class="label">Date of Claim:</span>
+                                <span class="value bold">{{ checkData(oClaim.dateOfclaim) }}</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Entitlement Type:</span>
+                                <span class="value bold">{{ checkData(oClaim.entitlementType) }}</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Weekly Benefit Amount:</span>
+                                <span class="value bold">${{ checkData(oClaim.wba) }}</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Status:</span>
+                                <span class="value bold">{{ getStatus(oClaim.status) }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Claim Details (Always Expanded) -->
+                    <div class="claim-details">
+                        <h4>Claim Details</h4>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="label">Billing Letter Date:</span>
+                                <span class="value">{{ checkData(oClaim.billing) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Total Amount Remaining:</span>
+                                <span class="value">{{ checkData(oClaim.amountRemaining) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Benefit Program:</span>
+                                <span class="value">{{ checkData(oClaim.benefitProgram) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Benefit Year Ending:</span>
+                                <span class="value">{{ checkData(oClaim.benefitYearEnding) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Claim Effective Date:</span>
+                                <span class="value">{{ checkData(oClaim.claimEffectiveDate) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Claim Bye Date:</span>
+                                <span class="value">{{ checkData(oClaim.claimBYEDate) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Days Unavailable to Work:</span>
+                                <span class="value">{{ checkData(oClaim.unavailable) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Amount Paid:</span>
+                                <span class="value">${{ checkData(oClaim.amountPaid) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Maximum Benefit Amount:</span>
+                                <span class="value">${{ checkData(oClaim.maximumBenefitAmount) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Remaining Balance:</span>
+                                <span class="value">${{ checkData(oClaim.remainingBalance) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Pension Rate:</span>
+                                <span class="value">{{ checkData(oClaim.pensionRate) }}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Last Employer:</span>
+                                <span class="value">{{ checkData(oClaim.lastEmployer) }}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Claim History (Always Expanded) -->
+                    <div class="claim-history" *ngIf="checkObjectExist(oClaim.claimHistory, true)">
+                        <h4>Claim History</h4>
+                        <div *ngFor="let oClaimHistory of oClaim.claimHistory; index as j" class="history-item">
+                            <div class="history-header">
+                                <h5>History Entry {{ j + 1 }}</h5>
+                            </div>
+                            <div class="history-details-grid">
+                                <div class="detail-item">
+                                    <span class="label">Entitlement Type:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.entitlementType) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Certificate Week Date:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.certificateWeekDate) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Claim Week End:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.claimWeekEndDate) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Certification Date:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.transactionDate) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Refusal of Employment:</span>
+                                    <span class="value">{{ checkForYesNo(oClaimHistory.refusalOfemployment) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Employed at Certification:</span>
+                                    <span class="value">{{ checkForYesNo(oClaimHistory.priorEmployment) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Days Worked During:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.daysWorkedDuringCertificationPeriod)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Holiday:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.holiday) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Vacation:</span>
+                                    <span class="value">{{ checkData(oClaimHistory.vacation) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Net payment:</span>
+                                    <span class="value">${{ checkData(oClaimHistory.netPaymentAmount) }}</span>
+                                </div>
+                            </div>
+
+                            <!-- Processed Weekly Details (Always Expanded) -->
+                            <div class="processed-details"
+                                *ngIf="checkObjectExist(oClaimHistory.processedWeeklyDetails, true)">
+                                <h6>Processed Weekly Details</h6>
+                                <div *ngFor="let oProcessedDetail of oClaimHistory.processedWeeklyDetails; index as k"
+                                    class="processed-item">
+                                    <div class="processed-grid">
+                                        <div class="detail-item">
+                                            <span class="label">Processed Certification Identifier:</span>
+                                            <span class="value">{{
+                                                checkData(oProcessedDetail.processedCertificationIdentifier) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Payable Amount:</span>
+                                            <span class="value">${{ checkData(oProcessedDetail.payableAmount) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Adjustment Code:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.adjustmentCode) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Payment Date:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.paymentDate) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Transaction Code:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.transactionCode) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Held Certifications:</span>
+                                            <span class="value">{{ checkForYesNo(oProcessedDetail.heldCertifications)
+                                                }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Excess Earnings at Certification:</span>
+                                            <span class="value">{{ checkForYesNo(oProcessedDetail.maxEarnings) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Workers Comp Reduction:</span>
+                                            <span class="value">${{ checkData(oProcessedDetail.workersCOMPReduction)
+                                                }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Gross Amount:</span>
+                                            <span class="value">${{ checkData(oProcessedDetail.grossAmount) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Pension Reduction:</span>
+                                            <span class="value">${{ checkData(oProcessedDetail.pensionReduction)
+                                                }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Child Support Intercept:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.childSupportIntercept)
+                                                }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">State Offset:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.stateOffset) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Irora Offset:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.iroraOffset) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Forfeit Days:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.forfeitDays) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Forfeit Week:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.forfeitWeek) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Federal Withholding Taxes:</span>
+                                            <span class="value">${{ checkData(oProcessedDetail.federalWithholdingTaxes)
+                                                }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">State Withholding Taxes:</span>
+                                            <span class="value">${{ checkData(oProcessedDetail.stateWithholdingTax)
+                                                }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Regular Benefits:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.regularBenefits) }}</span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <span class="label">Paid Days:</span>
+                                            <span class="value">{{ checkData(oProcessedDetail.paidDays) }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="claim-history" *ngIf="!checkObjectExist(oClaim.claimHistory, true)">
+                        <h4>Claim History</h4>
+                        <p class="no-data">NO CLAIM HISTORY</p>
+                    </div>
+
+                    <!-- Additional Data Sections -->
+                    <div class="additional-data">
+                        <!-- Disqualification Data -->
+                        <div class="data-section" *ngIf="checkObjectExist(oClaim.disqualificationData[0])">
+                            <h5>Disqualification Data</h5>
+                            <div class="data-grid">
+                                <div class="detail-item">
+                                    <span class="label">Wilfull Misrepresentation:</span>
+                                    <span class="value">{{
+                                        checkData(oClaim.disqualificationData[0].wilfullMisrepresentation) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Effective Disqualification Date:</span>
+                                    <span class="value">{{
+                                        checkData(oClaim.disqualificationData[0].effectiveDisqualificationDate)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Disqualification Type:</span>
+                                    <span class="value">{{
+                                        checkData(oClaim.disqualificationData[0].disqualificationType) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Disqualification Indicator:</span>
+                                    <span class="value">{{
+                                        checkData(oClaim.disqualificationData[0].disqualificationIndicator) }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Employer Charge Details -->
+                        <div class="data-section">
+                            <h5>Employer Charge Details</h5>
+                            <div class="data-grid">
+                                <div class="detail-item">
+                                    <span class="label">Employer Name:</span>
+                                    <span class="value">{{ checkData(oClaim.employerName) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Employer Street:</span>
+                                    <span class="value">{{ checkData(oClaim.employerStreet) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Employer Zip Code:</span>
+                                    <span class="value">{{ zipCodeFormat(oClaim.employerZipCode) }}</span>
+                                </div>
+                                <div class="detail-item" *ngIf="checkObjectExist(oClaim.employerChargeDetails[0])">
+                                    <span class="label">Employment Days Charged:</span>
+                                    <span class="value">{{ checkData(oClaim.employerChargeDetails[0].employmentDays)
+                                        }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Over Payment Details -->
+                        <div class="data-section" *ngIf="checkObjectExist(oClaim.overPaymentDetails[0])">
+                            <h5>Over Payment Details</h5>
+                            <div class="data-grid">
+                                <div class="detail-item">
+                                    <span class="label">Establishment Date:</span>
+                                    <span class="value">{{ checkData(oClaim.overPaymentDetails[0].established) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Overpayment Balance:</span>
+                                    <span class="value">${{ checkData(oClaim.overPaymentDetails[0].overpaymentBalance)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Over Payment Program:</span>
+                                    <span class="value">{{ checkData(oClaim.overPaymentDetails[0].overPaymantProgram)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Billing Status:</span>
+                                    <span class="value">{{ checkData(oClaim.overPaymentDetails[0].billingStatus)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Billing Letter Date:</span>
+                                    <span class="value">{{ checkData(oClaim.billing) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Repayment Since Last Billing:</span>
+                                    <span class="value">{{ checkData(oClaim.currentRepayment) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Date of Last Update:</span>
+                                    <span class="value">{{ checkData(oClaim.dateOfDetermination) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Payment Agreement Date:</span>
+                                    <span class="value">{{ checkData(oClaim.overPaymentDetails[0].installmentDate)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Expiration Date:</span>
+                                    <span class="value">{{ checkData(oClaim.expirationDate) }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Forfeit Data -->
+                        <div class="data-section" *ngIf="checkObjectExist(oClaim.forfeitData[0])">
+                            <h5>Forfeit Data</h5>
+                            <div class="data-grid">
+                                <div class="detail-item">
+                                    <span class="label">Forfeit Expiration Week:</span>
+                                    <span class="value">{{ checkData(oClaim.forfeitData[0].expirationWeek) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Forfeit Weeks:</span>
+                                    <span class="value">{{ checkData(oClaim.forfeitData[0].effectiveDays) }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Forfeit Expiration Week:</span>
+                                    <span class="value">{{ checkData(oClaim.forfeitData[0].forfeitExpirationWeek)
+                                        }}</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="label">Forfeit Weeks Used:</span>
+                                    <span class="value">{{ checkData(oClaim.forfeitData[0].forfeitWeeksUsed) }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No Claims Message -->
+        <div class="no-claims" *ngIf="!claimantDetails.claimList || claimantDetails.claimList.length === 0">
+            <h3>No Claims Found</h3>
+            <p>No claim information available for printing.</p>
+        </div>
+
+        <!-- Print Footer -->
+        <footer class="print-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>Integrated Eligibility System (IES)</p>
+                </div>
+                <div class="footer-right">
+                    <p>Confidential - For Official Use Only</p>
+                </div>
+            </div>
+            <div class="print-controls">
+                <button (click)="printPage()" class="print-button">Print Now</button>
+                <button (click)="goBack()" class="close-button">Close Window</button>
+            </div>
+        </footer>
+    </div>
+</div>

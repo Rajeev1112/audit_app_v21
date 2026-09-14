@@ -1,0 +1,2388 @@
+.mediaViewInfo {
+	--web-view-name: DETAILED RESULTS - 6;
+	--web-view-id: DETAILED_RESULTS__6;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+
+:root {
+	--web-view-ids: DETAILED_RESULTS__6;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+
+/* @import './print-styles.scss'; */
+
+@media print {
+	* {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Hide footer and footer light */
+	#FOOTER {
+		display: none !important;
+	}
+
+	.FOOTER_LIGHT {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	.FOOTER_DARK {
+		display: none !important;
+		visibility: hidden !important;
+	}
+
+	.WEEKLY_DETAILS {
+		margin-bottom: 30px;
+	}
+
+	.ADDITIONAL_DATA {
+		margin-right: 100px !important;
+		page-break-before: avoid;
+		position: relative;
+		top: auto;
+		clear: both;
+	}
+
+	.CLAIM_DETAILS_1 {
+		margin-bottom: 50px !important;
+		order: 1;
+	}
+
+	.MAIN_CLAIM_1 {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ADDITIONAL_DATA {
+		order: 2;
+	}
+
+	.DISQUALIFICATION_DATA,
+	.EMPLOYER_CHARGE_DETAILS,
+	.OVER_PAYMENT_DETAILS,
+	.FORFEIT_DATA {
+		page-break-inside: avoid;
+		margin-bottom: 20px;
+	}
+
+	/* Reduce font sizes for print */
+	.disqualification-value,
+	.employer-value,
+	.over-payment-value,
+	.forfeit-value {
+		font-size: 12px;
+	}
+
+	/* Expand all hidden sections */
+	[id^="a_"],
+	[id^="his_"] {
+		display: block !important;
+		height: auto !important;
+		max-height: none !important;
+	}
+}
+
+#DETAILED_RESULTS__6 {
+	position: absolute;
+	width: 1280px;
+	height: 1500px;
+	background-color: rgba(255, 255, 255, 1);
+	overflow: hidden;
+	--web-view-name: DETAILED RESULTS – 6;
+	--web-view-id: DETAILED_RESULTS__6;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+
+#header {
+	position: absolute;
+	width: 100%;
+	height: 85px;
+	left: 0px;
+	top: 0px;
+	overflow: hidden;
+}
+
+#CONTENT {
+	position: absolute;
+	width: 1280px;
+	height: 99%;
+	left: 0px;
+	top: 85px;
+	bottom: 100px;
+	overflow: visible;
+}
+
+#CONTENT_BG {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.CONTENT_BG {
+	position: absolute;
+	overflow: visible;
+	width: 1280px;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+#FOOTER {
+	position: absolute;
+	width: 1280px;
+	left: 0px;
+	height: 100px;
+	left: 0px;
+	top: 1493px;
+	overflow: visible;
+	bottom: 0px;
+}
+
+#FOOTER_ga {
+	mix-blend-mode: normal;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	overflow: visible;
+}
+
+#FOOTER_LIGHT {
+	fill: rgba(203, 203, 203, 1);
+}
+
+.FOOTER_LIGHT {
+	overflow: visible;
+	position: absolute;
+	width: 1280px;
+	height: 100px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#FOOTER_DARK {
+	fill: rgba(112, 112, 112, 1);
+}
+
+.FOOTER_DARK {
+	position: absolute;
+	overflow: visible;
+	width: 1280px;
+	height: 50px;
+	left: 0px;
+	top: 50px;
+}
+
+#Integrated_Eligibility_System_ {
+	left: 1047px;
+	top: 65px;
+	position: absolute;
+	overflow: visible;
+	width: 209px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: black;
+	color: rgba(255, 255, 255, 1);
+}
+
+#SEARCH {
+	position: absolute;
+	width: 100%;
+	height: 77px;
+	left: 0px;
+	top: 1px;
+	overflow: visible;
+}
+
+#DETAILS {
+	position: absolute;
+	width: 100%;
+	height: 125px;
+	left: 0px;
+	top: 76px;
+	overflow: visible;
+}
+
+#DETAILED_RESULTS__6 {
+	position: absolute;
+	width: 100%;
+	top: 27%;
+	height: 80%;
+	background-color: rgba(255, 255, 255, 1);
+	overflow: hidden;
+}
+
+#Filter {
+	position: absolute;
+	width: 100%;
+	top: 210px;
+	height: 80%;
+	left: 2%;
+	overflow: visible;
+}
+
+#Benefits_information_as_of_070 {
+	left: 0px;
+	top: 2%;
+	overflow: visible;
+	width: 331px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#GROUPING_HEADER_f {
+	position: absolute;
+	width: 71px;
+	height: 25px;
+	left: 0px;
+	top: 4%;
+	overflow: visible;
+}
+
+#Rectangle_6_f {
+	fill: rgba(11, 85, 132, 1);
+}
+
+.Rectangle_6_f {
+	position: absolute;
+	overflow: visible;
+	width: 71px;
+	height: 2px;
+	left: 0px;
+	top: 23px;
+}
+
+#Claim_List {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.MAIN_CLAIM_PARENT {
+	position: absolute;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	top: 9%;
+	width: 100%;
+}
+
+.MAIN_CLAIM_1 {
+	width: 100%;
+	margin: 3px;
+	height: auto;
+}
+
+.MAIN_CLAIM {
+	position: relative;
+	width: 100%;
+	height: 35px;
+	left: 0px;
+	overflow: visible;
+}
+
+.CLAIM_BACKGROUND_1 {
+	fill: rgba(217, 237, 238, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.CLAIM_BACKGROUND_2 {
+	fill: rgba(238, 217, 217, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.CLAIM_BACKGROUND {
+	position: absolute;
+	overflow: visible;
+	width: 97%;
+	height: 35px;
+	left: 0px;
+	top: 0px;
+}
+
+.OPEN_BTN_et {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 1%;
+	top: 25%;
+	overflow: visible;
+}
+
+.Rectangle_27_eu_1 {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(112, 112, 112, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.Rectangle_27_eu {
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	height: 20px;
+	left: 0px;
+	top: 0px;
+}
+
+.Text_ev {
+	left: 30%;
+	top: 0%;
+	position: absolute;
+	overflow: visible;
+	width: 9px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Date_of_Claim {
+	left: 4%;
+	top: 27%;
+	position: absolute;
+	overflow: visible;
+	width: 167px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Entitlement_Type_REG {
+	left: 20%;
+	top: 27%;
+	position: absolute;
+	overflow: visible;
+	width: 138px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Weekly_Benefit_Amount {
+	left: 60%;
+	top: 27%;
+	position: absolute;
+	overflow: visible;
+	width: 186px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Status_Active {
+	left: 88%;
+	top: 27%;
+	position: absolute;
+	overflow: visible;
+	width: 250px;
+	white-space: wrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Status_Active1 {
+	left: 80%;
+	top: 27%;
+	position: absolute;
+	overflow: visible;
+	width: 250px;
+	white-space: wrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.CLAIM_DETAILS_1 {
+	position: relative;
+	width: 97%;
+	height: 850px;
+	min-height: 850px;
+	overflow: auto;
+	top: 0%;
+	bottom: -20px;
+	border-color: grey;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.CLAIM_DETAILS {
+	position: absolute;
+	width: 20%;
+	height: 25px;
+	left: 1%;
+	overflow: visible;
+}
+
+.CLAIM_DETAILS_d {
+	position: absolute;
+	width: 98px;
+	height: 25px;
+	left: 0px;
+	top: 2px;
+	overflow: visible;
+}
+
+.Claim_Details {
+	left: 0.488px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 97px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Rectangle_26_d_1 {
+	fill: rgba(10, 144, 154, 1);
+}
+
+.Rectangle_26_d {
+	position: absolute;
+	overflow: visible;
+	width: 98px;
+	height: 2px;
+	left: 0px;
+	top: 23px;
+}
+
+.CLAIM_HISTORY_HEADER {
+	position: absolute;
+	width: 20%;
+	height: 25px;
+	left: 1%;
+	top: 105px;
+	overflow: visible;
+}
+
+.Claim_History_d {
+	left: 0.488px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Rectangle_26_1 {
+	fill: rgba(10, 144, 154, 1);
+}
+
+.Rectangle_26 {
+	position: absolute;
+	overflow: visible;
+	width: 98px;
+	height: 2px;
+	left: 0px;
+	top: 95%;
+}
+
+.WEEKLY_DETAILS {
+	position: relative;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 99%;
+	top: 140px;
+	overflow: visible;
+}
+
+.OPEN_CLAIM_HISTORY {
+	position: relative;
+	width: 100%;
+	margin: 1px;
+	min-height: 100%;
+	padding: 1px 1px 1px 1px;
+}
+
+.Claim_History_c {
+	position: relative;
+	width: 100%;
+	height: 45px;
+	left: 5px;
+	top: 0px;
+	margin: 1px;
+	overflow: visible;
+	padding: 1px 1px 1px 1px;
+}
+
+.DATA_POINTS_c {
+	position: relative;
+	width: 100%;
+	height: 41px;
+	left: 33.488px;
+	top: 1px;
+	margin: 1px;
+	overflow: visible;
+	vertical-align: top;
+}
+
+.Employed_at_Certification {
+	left: 180px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 170px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Days_Worked_During {
+	left: 364px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 143px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Certificate_Week_Date {
+	left: 152px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 215px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Vacation_0 {
+	left: 598.512px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 70px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Certification_Date {
+	left: 942px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 186px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Holiday_0 {
+	left: 521px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 63px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Refusal_of_Employment {
+	left: 0px;
+	top: 21px;
+	position: absolute;
+	overflow: visible;
+	width: 166px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Claim_Week_End {
+	left: 392px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 181px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Net_payment_ {
+	left: 988px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 141px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Entitlement_Type_REG_dj {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 138px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.OPEN_BTN_dk {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 2px;
+	top: 10px;
+	overflow: visible;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.Rectangle_27_dl_1 {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(112, 112, 112, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.Rectangle_27_dl {
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	height: 20px;
+	left: 0px;
+	top: 0px;
+}
+
+.n_ {
+	left: 6px;
+	position: absolute;
+	overflow: visible;
+	width: 5px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+	vertical-align: middle;
+}
+
+.Processed_Weekly_Details {
+	position: relative;
+	width: 99%;
+	height: auto;
+	left: 15px;
+	top: 5px;
+	overflow: visible;
+}
+
+.Processed_Weekly_Details_c {
+	position: relative;
+	width: 100%;
+	left: 5px;
+	top: 1px;
+	overflow: visible;
+	height: 15px;
+	margin-bottom: 20px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.DATA_cn {
+	position: relative;
+	width: 100%;
+	height: 105px;
+	left: 7px;
+	top: 5px;
+	overflow: visible;
+	margin-bottom: 30px;
+}
+
+.BACKGROUND_cm_1 {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.BACKGROUND_cm {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 110px;
+	left: 0px;
+	top: 0px;
+}
+
+.Processed_Weekly_Details_Item {
+	position: relative;
+	width: 100%;
+	height: 110px;
+	overflow: visible;
+}
+
+.Processed_Weekly_Details_Item_Divider {
+	margin-bottom: 8px;
+}
+
+.Col_4_2 {
+	left: 255px;
+	top: 69px;
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_4_1 {
+	left: 0px;
+	top: 69px;
+	position: absolute;
+	overflow: visible;
+	width: 100px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.Col_3_6 {
+	left: 880px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 117px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_3_5 {
+	left: 590px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 213px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_3_4 {
+	left: 475px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 220px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_3_3 {
+	left: 375px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 94px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_3_2 {
+	left: 185px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_3_1 {
+	left: 0px;
+	top: 46px;
+	position: absolute;
+	overflow: visible;
+	width: 100px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_2_6 {
+	left: 1045px;
+	top: 23px;
+	position: absolute;
+	overflow: visible;
+	width: 89px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_2_5 {
+	left: 950px;
+	top: 23px;
+	position: absolute;
+	overflow: visible;
+	width: 187px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_2_4 {
+	left: 715px;
+	top: 23px;
+	position: absolute;
+	overflow: visible;
+	width: 154px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_2_3 {
+	left: 515px;
+	top: 23px;
+	position: absolute;
+	overflow: visible;
+	width: 135px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_2_2 {
+	left: 245px;
+	top: 23px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_2_1 {
+	left: 0px;
+	top: 23px;
+	height: 15px;
+	position: absolute;
+	overflow: visible;
+	width: 210px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_1_6 {
+	left: 1045px;
+	top: 2px;
+	position: absolute;
+	overflow: visible;
+	width: 190px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_1_5 {
+	left: 855px;
+	top: 2px;
+	position: absolute;
+	overflow: visible;
+	width: 195px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_1_4 {
+	left: 665px;
+	top: 2px;
+	position: absolute;
+	overflow: visible;
+	width: 195px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_1_3 {
+	left: 500px;
+	top: 2px;
+	position: absolute;
+	overflow: visible;
+	width: 75px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_1_2 {
+	left: 280px;
+	top: 2px;
+	position: absolute;
+	overflow: visible;
+	width: 195px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Col_1_1 {
+	left: 0px;
+	top: 2px;
+	position: absolute;
+	overflow: visible;
+	width: 200px;
+	height: 15px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.ADDITIONAL_DATA {
+	position: relative;
+	width: 1177px;
+	left: 12px;
+	top: 18%;
+	height: auto;
+	overflow: visible;
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.DISQUALIFICATION_DATA,
+.EMPLOYER_CHARGE_DETAILS,
+.OVER_PAYMENT_DETAILS,
+.FORFEIT_DATA {
+	position: relative;
+	width: 100%;
+	height: auto;
+	min-height: 0;
+	left: 0;
+	top: auto;
+	overflow: visible;
+	padding-top: 34px;
+}
+
+.Disqualification_Data {
+	left: 0.136px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 152px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Disqualification_Data_Details {
+	left: 0.136px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 181px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Disqualification_Data_grid {
+	width: calc(100% - 16px);
+	max-width: 100%;
+	min-height: 48px;
+	overflow: visible;
+	display: grid;
+	grid-template-columns: 100%;
+	row-gap: 4px;
+	align-items: start;
+	font-family: Proxima Nova;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	box-sizing: border-box;
+}
+
+.disqualification-field {
+	min-width: 0;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	column-gap: 4px;
+	align-items: start;
+}
+
+.disqualification-label {
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+.disqualification-value {
+	min-width: 0;
+	font-weight: bold;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	line-height: 1.35;
+}
+
+.GROUPING_HEADER_by {
+	position: absolute;
+	width: 151.136px;
+	height: 25px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+.Rectangle_6_bz_1 {
+	fill: rgba(117, 15, 15, 1);
+}
+
+.Rectangle_6_bz {
+	position: absolute;
+	overflow: visible;
+	width: 151px;
+	height: 2px;
+	left: 0px;
+	top: 23px;
+}
+
+.DATA_ITEM {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.Disqualification_Data_grid {
+	width: calc(100% - 16px);
+	max-width: 100%;
+	min-height: 48px;
+	overflow: visible;
+	display: grid;
+	grid-template-columns: 100%;
+	row-gap: 4px;
+	align-items: start;
+	font-family: Proxima Nova;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	box-sizing: border-box;
+}
+
+.Wilfull_Misrepresentation_N {
+	left: 659.338px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 169px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Effective_Disqualification_Dat {
+	left: 386.512px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 258px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Disqualification_Type_IDTY {
+	left: 207.512px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 165px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Disqualification_Indicator_IDT {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 189px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Employer_Charge_Details {
+	left: 0.136px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 181px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Employer-Change-grid {
+	width: calc(100% - 16px);
+	max-width: 100%;
+	min-height: 48px;
+	overflow: visible;
+	display: grid;
+	grid-template-columns: 100%;
+	row-gap: 4px;
+	align-items: start;
+	font-family: Proxima Nova;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	box-sizing: border-box;
+}
+
+.employer-field {
+	min-width: 0;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	column-gap: 4px;
+	align-items: start;
+}
+
+.employer-label {
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+.employer-value {
+	min-width: 0;
+	font-weight: bold;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	line-height: 1.35;
+}
+
+.GROUPING_HEADER_bp {
+	position: absolute;
+	width: 180.136px;
+	height: 25px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+.Rectangle_6_bq_1 {
+	fill: rgba(121, 58, 124, 1);
+}
+
+.Rectangle_6_bq {
+	position: absolute;
+	overflow: visible;
+	width: 180px;
+	height: 2px;
+	left: 0px;
+	top: 23px;
+}
+
+.DATA_OVER {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.Over_Payment_grid {
+	width: calc(100% - 16px);
+	max-width: 100%;
+	min-height: 48px;
+	overflow: visible;
+	display: grid;
+	grid-template-columns: 100%;
+	row-gap: 4px;
+	align-items: start;
+	font-family: Proxima Nova;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	box-sizing: border-box;
+}
+
+.Expiration_Date {
+	left: 459px;
+	top: 26px;
+	position: absolute;
+	overflow: visible;
+	width: 173px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Payment_Agreement_Date {
+	left: 211px;
+	top: 26px;
+	position: absolute;
+	overflow: visible;
+	width: 238px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Date_of_Last_Update {
+	left: 0px;
+	top: 26px;
+	position: absolute;
+	overflow: visible;
+	width: 202px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Repayment_Since_Last_ {
+	left: 975.729px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 202px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Billing_Letter_Date_ {
+	left: 770.326px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 191px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Billing_Status_ACTV {
+	left: 632.907px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 123px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Over_Payment_Program_ {
+	left: 399px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 219px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Overpayment_Balance {
+	left: 214.488px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 170px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.over-payment-field {
+	min-width: 0;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	column-gap: 4px;
+	align-items: start;
+}
+
+.over-payment-label {
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+.over-payment-value {
+	min-width: 0;
+	font-weight: bold;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	line-height: 1.35;
+}
+
+.Establishment_Date_ {
+	left: 0.488px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 200px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.GROUPING_HEADER_bg {
+	position: absolute;
+	width: 157px;
+	height: 25px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+.Rectangle_6_bh_1 {
+	fill: rgba(157, 87, 24, 1);
+}
+
+.Rectangle_6_bh {
+	position: absolute;
+	overflow: visible;
+	width: 157px;
+	height: 2px;
+	left: 0px;
+	top: 23px;
+}
+
+.Over_Payment_Details {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 158px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#IMAGE {
+	position: absolute;
+	width: 1280px;
+	height: 402px;
+	left: 0px;
+	top: 1089px;
+	display: none;
+	overflow: visible;
+}
+
+#Image_2 {
+	position: absolute;
+	width: 1280px;
+	height: 290.105px;
+	left: 0px;
+	top: 14px;
+	overflow: visible;
+}
+
+#Path_7_m {
+	fill: url(#Path_7_m);
+}
+
+.Path_7_m {
+	overflow: visible;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#DATA_GROUPS {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 190px;
+	overflow: visible;
+}
+
+#WHITE_BACKGROUND {
+	fill: rgba(241, 241, 241, 1);
+}
+
+.WHITE_BACKGROUND {
+	overflow: visible;
+	position: absolute;
+	width: 1280px;
+	min-height: 100%;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#WHITE_BACKGROUND_p {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.WHITE_BACKGROUND_p {
+	overflow: visible;
+	position: absolute;
+	width: 1260px;
+	min-height: 100%;
+	left: 10px;
+	top: 15px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#WHITE_BACKGROUND_u {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.WHITE_BACKGROUND_u {
+	overflow: visible;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 7%;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#WHITE_BACKGROUND_v {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.WHITE_BACKGROUND_v {
+	overflow: visible;
+	position: absolute;
+	width: 1226px;
+	height: 100%px;
+	left: -13px;
+	top: -5px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.DATA_FOR {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.Forfeit_Data_Details {
+	left: 0.136px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 181px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Forfeit_Data_grid {
+	width: calc(100% - 16px);
+	max-width: 100%;
+	min-height: 48px;
+	overflow: visible;
+	display: grid;
+	grid-template-columns: 100%;
+	row-gap: 4px;
+	align-items: start;
+	font-family: Proxima Nova;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	box-sizing: border-box;
+}
+
+.forfeit-field {
+	min-width: 0;
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	column-gap: 4px;
+	align-items: start;
+}
+
+.forfeit-label {
+	white-space: nowrap;
+	font-weight: normal;
+}
+
+.forfeit-value {
+	min-width: 0;
+	font-weight: bold;
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	line-height: 1.35;
+}
+
+.Expiration_Week_001 {
+	left: 530.419px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 130px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Forfeit_Weeks_002 {
+	left: 397.512px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 118px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Forfeit_Expiration_Week_202401 {
+	left: 167px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 222px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Forfeit_Weeks_Used_007 {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 153px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.GROUPING_HEADER_FOR {
+	position: absolute;
+	width: 86.271px;
+	height: 25px;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+.Rectangle_6_1 {
+	fill: rgba(88, 103, 36, 1);
+}
+
+.Rectangle_6 {
+	position: absolute;
+	overflow: visible;
+	width: 86px;
+	height: 2px;
+	left: 0px;
+	top: 23px;
+}
+
+.Forfeit_Data {
+	left: 0.271px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 87px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#CLOSED_CLAIM_HISTORY {
+	position: absolute;
+	width: 1185px;
+	height: 55px;
+	left: 0px;
+	top: 294px;
+	overflow: visible;
+}
+
+#BACKGROUND {
+	fill: rgba(241, 241, 241, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.BACKGROUND {
+	position: absolute;
+	overflow: visible;
+	width: 1185px;
+	height: 55px;
+	left: 5px;
+	top: 0px;
+}
+
+#BACKGROUND_ck_1 {
+	fill: rgba(238, 238, 238, 1);
+	stroke: rgba(199, 199, 199, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.BACKGROUND_ck {
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	height: 100%;
+	left: 5px;
+	top: 0px;
+}
+
+#Claim_History {
+	position: absolute;
+	width: 1163.488px;
+	height: 41px;
+	left: 10px;
+	top: 8px;
+	overflow: visible;
+}
+
+#DATA_POINTS {
+	position: absolute;
+	width: 1130px;
+	height: 41px;
+	left: 33.488px;
+	top: 0px;
+	overflow: visible;
+}
+
+#Entitlement_Type_REG {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 138px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#OPEN_BTN {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 0px;
+	top: 3px;
+	overflow: visible;
+}
+
+#Rectangle_27 {
+	fill: rgba(255, 255, 255, 1);
+	stroke: rgba(112, 112, 112, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.Rectangle_27 {
+	position: absolute;
+	overflow: visible;
+	width: 20px;
+	height: 20px;
+	left: 0px;
+	top: 0px;
+}
+
+#Text {
+	left: 6px;
+	top: 1px;
+	position: absolute;
+	overflow: visible;
+	width: 9px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#CLAIM_LIST {
+	position: absolute;
+	width: 1206px;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+#CLAIM_LIST_1 {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	overflow: visible;
+}
+
+.ADDITIONAL_DETAILS {
+	position: absolute;
+	width: 100%;
+	height: 38px;
+	left: 5px;
+	top: 35px;
+	overflow: visible;
+	padding: 0px 0px 0px 0px;
+}
+
+.Billing_Letter_Date_1 {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 190px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Benefit_Program_6 {
+	left: 440px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 135px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Total_Amount_Remaining_1 {
+	left: 192px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 195px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Maximum_Benefit_Amount_20 {
+	left: 455px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 195px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Days_Unavailable_to_Work {
+	left: 0px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 230px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.n_Remaining_Balance_15 {
+	left: 750px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 185px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	padding: 0px 0px 0px 0px;
+}
+
+.Amount_Paid_03 {
+	left: 240px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 165px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Last_Employer_New_York_Discoun {
+	left: 0px;
+	top: 45px;
+	position: absolute;
+	overflow: visible;
+	width: 355px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	padding: 0px 0px 0px 0px;
+}
+
+.Last_Employer_New_York_Discoun1 {
+	left: 0px;
+	top: 43px;
+	position: absolute;
+	overflow: visible;
+	width: 300px;
+	white-space: wrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	padding: 0px 0px 0px 0px;
+}
+
+.Benefit_Year_Ending {
+	left: 585px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 190px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Claim_Effective_Date {
+	left: 780px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 200px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Claim_Bye_Date_2023 {
+	left: 1025px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 200px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+.Pension_Rate_10 {
+	left: 1035px;
+	top: 22px;
+	position: absolute;
+	overflow: visible;
+	width: 230px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	padding: 0px 0px 0px 0px;
+}
+
+#n_0052023 {
+	left: 11px;
+	top: 25px;
+	position: absolute;
+	overflow: visible;
+	width: 72px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#DETAILS_BG {
+	fill: rgba(136, 8, 8, 1);
+}
+
+.DETAILS_BG {
+	overflow: visible;
+	position: absolute;
+	width: 1280px;
+	height: 125px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#DETAILS_BG_jv {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.DETAILS_BG_jv {
+	overflow: visible;
+	position: absolute;
+	width: 1240px;
+	height: 100px;
+	left: 20px;
+	top: 12px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#DETAILS_1 {
+	position: absolute;
+	width: 100%;
+	height: 15%;
+	left: 0px;
+	top: 75px;
+	overflow: visible;
+}
+
+#ADDRESS_BLOCK_1 {
+	position: absolute;
+	width: 100%;
+	height: 51px;
+	top: 45px;
+	overflow: visible;
+}
+
+.DETAILS_BG_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1280px;
+	height: 125px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.DETAILS_BG_jv_1 {
+	overflow: visible;
+	position: absolute;
+	width: 1240px;
+	height: 100px;
+	left: 20px;
+	top: 12px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+#Current_Address {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 100%;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	vertical-align: middle;
+}
+
+.label_es {
+	white-space: nowrap;
+	margin-right: 4px;
+}
+
+.value_es {
+	white-space: normal;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}

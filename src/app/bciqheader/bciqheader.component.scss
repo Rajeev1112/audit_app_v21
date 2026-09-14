@@ -1,0 +1,278 @@
+#HEADER_BG {
+	fill: rgba(255, 255, 255, 1);
+}
+
+.HEADER_BG {
+	overflow: visible;
+	position: absolute;
+	width: 100%;
+	//height: 10%;
+	height: 80px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	// border-color: black;
+	// border-style: solid;
+}
+
+#HEADER_BG_BAR {
+	fill: rgba(11, 85, 132, 1);
+}
+
+.HEADER_BG_BAR {
+	position: absolute;
+	overflow: visible;
+	width: 1280px;
+	height: 5px;
+	left: 0px;
+	top: 80px;
+}
+
+.Hamburger_Menu {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	left: 1224px;
+	top: 23px;
+	overflow: visible;
+}
+
+#Rectangle_1 {
+	fill: transparent;
+	stroke: rgba(255, 255, 255, 1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 35px;
+	height: 35px;
+	left: 0px;
+	top: 0px;
+}
+
+#fa-bars {
+	left: 7.5px;
+	top: 6.5px;
+	position: absolute;
+	overflow: visible;
+	width: 21px;
+	white-space: nowrap;
+	text-align: center;
+	font-family: Font Awesome 6 Free Solid;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(255, 255, 255, 1);
+}
+
+#Unemployment_Insurance_Benefit {
+	left: 19px;
+	top: 42px;
+	position: absolute;
+	overflow: visible;
+	width: 283px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(11, 85, 132, 1);
+}
+
+#Benefit_Claimant_Inquiry_Searc {
+	left: 19px;
+	top: 18px;
+	position: absolute;
+	overflow: visible;
+	width: 309px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 22px;
+	color: rgba(11, 85, 132, 1);
+}
+
+#LOGOUT {
+	position: absolute;
+	width: 69px;
+	height: 18px;
+	left: 1175px;
+	top: 48px;
+	overflow: visible;
+	cursor: pointer;
+}
+
+#Logout {
+	left: 0px;
+	top: 1px;
+	position: absolute;
+	overflow: visible;
+	width: 44px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	cursor: pointer;
+}
+
+#right-from-bracket {
+	left: 51px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 19px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Font Awesome 6 Free Solid;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#User_Divider {
+	position: absolute;
+	height: 19px;
+	left: 1010px;
+	top: 50px;
+	border-left: 2px solid #000;
+	overflow: visible;
+}
+
+#UserLogged {
+	position: absolute;
+	width: 200px;
+	height: 20px;
+	left: 790px;
+	top: 48px;
+	overflow: visible;
+	text-align: right;
+	vertical-align: middle;
+}
+
+#audit_search {
+	margin-right: 80px;
+	margin-top: -3px;
+}
+
+#UserLogged_ {
+	left: 0px;
+	top: 1px;
+	position: absolute;
+	overflow: visible;
+	width: 140px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	vertical-align: middle;
+	color: rgba(72, 72, 72, 1);
+}
+
+#PRINT {
+	position: absolute;
+	width: 54px;
+	height: 18px;
+	left: 1105px;
+	top: 48px;
+	overflow: visible;
+	cursor: pointer;
+}
+
+#print {
+	left: 36px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 19px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Font Awesome 6 Free Solid;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	color: rgba(72, 72, 72, 1);
+}
+
+#Print_ {
+	left: 0px;
+	top: 1px;
+	position: absolute;
+	overflow: visible;
+	width: 32px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+}
+
+
+#AUDIT {
+	position: absolute;
+	width: 60px;
+	height: 18px;
+	left: 1030px;
+	top: 48px;
+	overflow: visible;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	cursor: pointer;
+	transition: opacity 0.2s ease;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+#audit {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#Audit_ {
+	left: 20px;
+	top: 1px;
+	position: absolute;
+	overflow: visible;
+	width: 40px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Proxima Nova;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	color: rgba(72, 72, 72, 1);
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+		color: rgba(11, 85, 132, 1);
+	}
+}

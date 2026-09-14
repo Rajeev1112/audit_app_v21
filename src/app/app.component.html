@@ -1,0 +1,648 @@
+<header class="header" *ngIf="visibleOnLoad || authInProgress">
+	<div style="padding:20px;">
+		Loading...
+	</div>
+</header>
+<header class="header" *ngIf="!visibleOnLoad && !authInProgress && visibleHasRole">
+	<app-bciqheader (parentprintBCIQ)="parentprintBCIQ()" (auditClicked)="onAuditClick()"></app-bciqheader>
+</header>
+<header class="header" *ngIf="!visibleOnLoad && !authInProgress && !visibleHasRole">
+	<app-bciqheader-no-auth></app-bciqheader-no-auth>
+</header>
+<div id="CONTENT" *ngIf="!visibleOnLoad && !authInProgress && !visibleHasRole">
+	<div style="height: 15px;">&nbsp;</div>
+	<span style="text-align: center; font-family: Arial;font-style: normal;font-weight: normal;font-size: 18px;">
+		<svg height="32" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32" width="32"
+			xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<g>
+				<g id="Error_2_">
+					<g id="Error">
+						<circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+						<path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+							style="fill:#E6E6E6;" />
+					</g>
+				</g>
+			</g>
+		</svg>
+		&nbsp;&nbsp;<b>Error: </b> Access denied. User is not authorized. Please contact your supervisor or your
+		district's LAN.
+	</span>
+</div>
+<div id="CONTENT" *ngIf="!authInProgress && visibleHasRole" #BCIQ_CONTENT>
+	<svg class="CONTENT_BG" *ngIf="visibleNoError">
+		<rect id="CONTENT_BG" rx="0" ry="0" x="0" y="0" width="1280" height="1060">
+		</rect>
+	</svg>
+	<div id="IMAGE" *ngIf="visibleNoError">
+		<img id="Image_2" src="Image_2.png" srcset="Image_2.png 1x, Image_2@2x.png 2x">
+		<svg class="Path_7_m" viewBox="0 -1 1280 402">
+			<linearGradient id="Path_7_m" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
+				<stop offset="0" stop-color="#fff" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+			</linearGradient>
+			<path id="Path_7_m" d="M 0 -1 L 1280 0 L 1280 401 L 0 401 L 0 -1 Z">
+			</path>
+		</svg>
+	</div>
+	<div id="DATA_GROUPS" *ngIf="visibleNoError ">
+		<svg class="WHITE_BACKGROUND" viewBox="0 0 1280 1220">
+			<path id="WHITE_BACKGROUND" d="M 0 0 L 1280 0 L 1280 1220 L 0 1220 L 0 0 Z">
+			</path>
+		</svg>
+		<svg class="WHITE_BACKGROUND_p" viewBox="0 0 1260 1095">
+			<path id="WHITE_BACKGROUND_p" d="M 0 0 L 1260 0 L 1260 1095 L 0 1095 L 0 0 Z">
+			</path>
+		</svg>
+	</div>
+	<div id="SEARCH" *ngIf="!showAuditSearch">
+		<app-search (claimantInfoChanged)="onClaimantInfoChanged($event)" [claimantInfo]="claimantDetails"
+			[userInfo]="user"></app-search>
+	</div>
+	<div id="DETAILS" class="DETAILS" *ngIf="visibleNoError && !showAuditSearch">
+		<app-details-claimant [claimantInfo]="claimantDetails"></app-details-claimant>
+	</div>
+	<div id="AUDIT_DETAILS" class="DETAILS" *ngIf="showAuditSearch">
+		<app-audit-search></app-audit-search>
+		<div style="text-align: center; margin-top: 20px;">
+			<button (click)="onBackClick()"
+				style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+				← Back to Search
+			</button>
+		</div>
+	</div>
+	<div id="DETAILS_1" *ngIf="!visibleNoError && !visibleError && !showAuditSearch">
+		<app-blank-no-data></app-blank-no-data>
+	</div>
+	<div id="DETAILS_1" *ngIf="visibleError">
+		<svg class="DETAILS_BG_1" viewBox="0 0 1280 125">
+			<path id="DETAILS_BG" d="M 0 0 L 1280 0 L 1280 125 L 0 125 L 0 0 Z">
+			</path>
+		</svg>
+		<svg class="DETAILS_BG_jv_1" viewBox="0 0 1240 100">
+			<path id="DETAILS_BG_jv" d="M 0 0 L 1240 0 L 1240 100 L 0 100 L 0 0 Z">
+			</path>
+		</svg>
+		<div id="ADDRESS_BLOCK_1">
+			<div id="Current_Address">
+				<span style="font-family: Arial;font-style: normal;font-weight: normal;font-size: 18px;">
+					<svg height="32" style="overflow:visible;enable-background:new 0 0 32 32" viewBox="0 0 32 32"
+						width="32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g>
+							<g id="Error_1_">
+								<g id="Error">
+									<circle cx="16" cy="16" id="BG" r="16" style="fill:#D72828;" />
+									<path d="M14.5,25h3v-3h-3V25z M14.5,6v13h3V6H14.5z" id="Exclamatory_x5F_Sign"
+										style="fill:#E6E6E6;" />
+								</g>
+							</g>
+						</g>
+					</svg>
+					&nbsp;&nbsp;<b>Error: </b> {{this.errorMessage}}</span>
+			</div>
+		</div>
+	</div>
+	<div id="Filter" *ngIf="visibleNoError">
+		<div id="Benefits_information_as_of_070">
+			<span>Benefits information as of <b>{{ this.claimantDetails.startDate_UI | date: 'yyyy-MM-dd' }}</b> to
+				<b>{{this.claimantDetails.endDate_UI | date: 'yyyy-MM-dd' }}</b>.</span>
+		</div>
+		<div id="GROUPING_HEADER_f">
+			<svg class="Rectangle_6_f">
+				<rect id="Rectangle_6_f" rx="0" ry="0" x="0" y="0" width="75" height="2">
+				</rect>
+			</svg>
+			<div id="Claim_List">
+				<span>Claim List</span>
+			</div>
+		</div>
+		<div class="MAIN_CLAIM_PARENT">
+			<div class="MAIN_CLAIM_1" *ngFor="let oClaim of this.claimantDetails.claimList;index as i" #divs>
+				<div class="MAIN_CLAIM">
+					<svg class="CLAIM_BACKGROUND">
+						<rect class="CLAIM_BACKGROUND_1" rx="0" ry="0" x="0" y="0" width="100%" height="100%"
+							*ngIf="getActiveStatus(oClaim.status,0)"></rect>
+						<rect class="CLAIM_BACKGROUND_2" rx="0" ry="0" x="0" y="0" width="100%" height="100%"
+							*ngIf="!getActiveStatus(oClaim.status,0)"></rect>
+					</svg>
+					<div class="OPEN_BTN_et" (click)="showHideClaim($event, 'a_' + i.toString())">
+						<svg class="Rectangle_27_eu">
+							<rect class="Rectangle_27_eu_1" rx="0" ry="0" x="0" y="0" width="20" height="20">
+							</rect>
+						</svg>
+						<div class="Text_ev">
+							<span #divClaimPlus id="claimPlus_{{i}}">+</span>
+						</div>
+					</div>
+					<div class="Date_of_Claim">
+						<span>Date of Claim: </span><span style="font-style:normal;font-weight:bold;">{{
+							this.checkData(oClaim.dateOfclaim) }}</span>
+					</div>
+					<div class="Entitlement_Type_REG">
+						<span>Entitlement Type: </span><span style="font-style:normal;font-weight:bold;">{{
+							this.checkData(oClaim.entitlementType) }}</span>
+					</div>
+					<div class="Weekly_Benefit_Amount">
+						<span>Weekly Benefit Amount: </span><span style="font-style:normal;font-weight:bold;">${{
+							this.checkData(oClaim.wba) }}</span>
+					</div>
+					<div class="Status_Active" *ngIf="getActiveStatus(oClaim.status,1)">
+						<span>Status: </span><span style="font-style:normal;font-weight:bold;">{{
+							this.getStatus(oClaim.status) }}</span>
+					</div>
+					<div class="Status_Active1" *ngIf="!getActiveStatus(oClaim.status,1)">
+						<span>Status: </span><span style="font-style:normal;font-weight:bold;">{{
+							this.getStatus(oClaim.status) }}</span>
+					</div>
+				</div>
+				<div class="CLAIM_DETAILS_1" id="a_{{i}}" #divDynamic hidden style="display: none;">
+					<div class="CLAIM_DETAILS">
+						<div class="CLAIM_DETAILS_d">
+							<div class="Claim_Details">
+								<span>Claim Details</span>
+							</div>
+							<svg class="Rectangle_26_d">
+								<rect class="Rectangle_26_d_1" rx="0" ry="0" x="0" y="0" width="98" height="2">
+								</rect>
+							</svg>
+						</div>
+						<div class="ADDITIONAL_DETAILS">
+							<div class="Billing_Letter_Date_1">
+								<span>Billing Letter Date: </span><span style="font-style:normal;font-weight:bold;"> {{
+									this.checkData(this.checkData(oClaim.billing)) }}</span>
+							</div>
+							<div class="Total_Amount_Remaining_1">
+								<span>Total Amount Remaining: </span><span
+									style="font-style:normal;font-weight:bold;">{{
+									this.checkData(oClaim.amountRemaining) }}</span>
+							</div>
+							<div class="Benefit_Program_6">
+								<span>Benefit Program: </span><span style="font-style:normal;font-weight:bold;">{{
+									this.checkData(oClaim.benefitProgram) }}</span>
+							</div>
+							<div class="Benefit_Year_Ending">
+								<span>Benefit Year Ending: </span><span style="font-style:normal;font-weight:bold;">{{
+									this.checkData(oClaim.benefitYearEnding) }}</span>
+							</div>
+							<div class="Claim_Effective_Date">
+								<span>Claim Effective Date: </span><span style="font-style:normal;font-weight:bold;">{{
+									this.checkData(oClaim.claimEffectiveDate) }}</span>
+							</div>
+							<div class="Claim_Bye_Date_2023">
+								<span>Claim Bye Date: </span><span style="font-style:normal;font-weight:bold;">{{
+									this.checkData(oClaim.claimBYEDate) }}</span>
+							</div>
+							<div class="Days_Unavailable_to_Work">
+								<span>Days Unavailable to Work: </span><span
+									style="font-style:normal;font-weight:bold;">{{ this.checkData(oClaim.unavailable)
+									}}</span>
+							</div>
+							<div class="Amount_Paid_03">
+								<span>Amount Paid: </span><span style="font-style:normal;font-weight:bold;">${{
+									this.checkData(oClaim.amountPaid) }}</span>
+							</div>
+							<div class="Maximum_Benefit_Amount_20">
+								<span>Maximum Benefit Amount: </span><span
+									style="font-style:normal;font-weight:bold;">${{
+									this.checkData(oClaim.maximumBenefitAmount) }}
+								</span>
+							</div>
+							<div class="n_Remaining_Balance_15">
+								<span> Remaining Balance: </span><span style="font-style:normal;font-weight:bold;">${{
+									this.checkData(oClaim.remainingBalance) }}</span>
+							</div>
+							<div class="Pension_Rate_10">
+								<span>Pension Rate: </span><span style="font-style:normal;font-weight:bold;">{{
+									this.checkData(oClaim.pensionRate) }}</span>
+							</div>
+							<div class="Last_Employer_New_York_Discoun">
+								<span>Last Employer: </span>
+								<span style="font-style:normal;font-weight:bold;">{{ this.checkData(oClaim.lastEmployer)
+									}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="CLAIM_HISTORY_HEADER">
+						<div class="Claim_History_d">
+							<span>Claim History</span>
+						</div>
+						<svg class="Rectangle_26">
+							<rect class="Rectangle_26_1" rx="0" ry="0" x="0" y="0" width="98" height="2">
+							</rect>
+						</svg>
+					</div>
+					<div class="WEEKLY_DETAILS" *ngIf="!this.checkObjectExist(oClaim.claimHistory, true)">
+						<div class="OPEN_CLAIM_HISTORY" #divHistory>
+							<div class="Claim_History_c">
+								<div class="DATA_POINTS_c">NO CLAIM HISTORY</div>
+							</div>
+						</div>
+					</div>
+					<div class="WEEKLY_DETAILS" *ngIf="this.checkObjectExist(oClaim.claimHistory,true)">
+						<div class="OPEN_CLAIM_HISTORY" *ngFor="let oClaimHistory of oClaim.claimHistory;index as j"
+							#divHistory>
+							<svg class="BACKGROUND"
+								*ngIf="this.checkBackgroundCollapse('his_' + i.toString() + j.toString())">
+								<rect id="BACKGROUND" rx="0" ry="0" x="0" y="0" width="1205" height="48">
+								</rect>
+							</svg>
+							<svg class="BACKGROUND_ck"
+								*ngIf="!this.checkBackgroundCollapse('his_' + i.toString() + j.toString())">
+								<rect id="BACKGROUND_ck_1" rx="0" ry="0" x="0" y="0" width="100%" height="100%">
+								</rect>
+							</svg>
+							<div class="Claim_History_c">
+								<div class="OPEN_BTN_dk"
+									(click)="showHideEntitlement($event, 'his_' + i.toString() + j.toString())">
+									<svg class="Rectangle_27_dl">
+										<rect class="Rectangle_27_dl_1" rx="0" ry="0" x="0" y="0" width="20"
+											height="100%">
+										</rect>
+									</svg>
+									<div class="n_">
+										<span #divEntPlus id="entPlus_{{i}}{{j}}">+</span>
+									</div>
+								</div>
+								<div class="DATA_POINTS_c">
+									<div class="OPEN_CLAIM_HISTORY">
+										<div class="Entitlement_Type_REG_dj">
+											<span>Entitlement Type: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oClaimHistory.entitlementType) }} </span>
+										</div>
+										<div class="Certificate_Week_Date">
+											<span>Certificate Week Date: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oClaimHistory.certificateWeekDate) }}</span>
+										</div>
+										<div class="Claim_Week_End">
+											<span>Claim Week End: </span><span
+												style="font-style:normal;font-weight:bold;"> {{
+												this.checkData(oClaimHistory.claimWeekEndDate)}}</span>
+										</div>
+										<div class="Certification_Date">
+											<span>Certification Date: {{ this.checkData(oClaimHistory.transactionDate)
+												}}</span>
+										</div>
+										<div class="Refusal_of_Employment">
+											<span>Refusal of Employment: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkForYesNo(oClaimHistory.refusalOfemployment) }}</span>
+										</div>
+										<div class="Employed_at_Certification">
+											<span>Employed at Certification: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkForYesNo(oClaimHistory.priorEmployment) }}</span>
+										</div>
+										<div class="Days_Worked_During">
+											<span>Days Worked During: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oClaimHistory.daysWorkedDuringCertificationPeriod)
+												}}</span>
+										</div>
+										<div class="Holiday_0">
+											<span>Holiday: </span><span style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oClaimHistory.holiday) }}</span>
+										</div>
+										<div class="Vacation_0">
+											<span>Vacation: </span><span style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oClaimHistory.vacation) }}</span>
+										</div>
+										<div class="Net_payment_">
+											<span>Net payment: </span><span style="font-style:normal;font-weight:bold;">
+												${{ this.checkData(oClaimHistory.netPaymentAmount) }}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="Processed_Weekly_Details" id="his_{{i}}{{j}}" #divHisDynamic hidden
+								style="display: none;">
+								<div class="Processed_Weekly_Details_c">
+									<span>Processed Weekly Details</span>
+								</div>
+								<div class="Processed_Weekly_Details_Item"
+									*ngFor="let oProcessedDetail of oClaimHistory.processedWeeklyDetails; index as k; last as isLastProcessedDetail"
+									[ngClass]="{'Processed_Weekly_Details_Item_Divider': !isLastProcessedDetail}">
+									<svg class="BACKGROUND_cm">
+										<rect class="BACKGROUND_cm_1" rx="0" ry="0" x="0" y="0" width="100%"
+											height="100%">
+										</rect>
+									</svg>
+									<div class="DATA_cn">
+										<div class="Col_1_1">
+											<span>Processed Certification Identifier: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.processedCertificationIdentifier)
+												}}</span>
+										</div>
+										<div class="Col_1_2">
+											<span>Payable Amount: </span><span
+												style="font-style:normal;font-weight:bold;">${{
+												this.checkData(oProcessedDetail.payableAmount)
+												}}</span>
+										</div>
+										<div class="Col_1_3">
+											<span>Adjustment Code: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.adjustmentCode)}}</span>
+										</div>
+										<div class="Col_1_4">
+											<span>Payment Date: </span><span
+												style="font-style:normal;font-weight:bold;"> {{
+												this.checkData(oProcessedDetail.paymentDate)
+												}}</span>
+										</div>
+										<div class="Col_1_5">
+											<span>Transaction Code: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.transactionCode)
+												}}</span>
+										</div>
+										<div class="Col_1_6">
+											<span>
+												Held Certifications: {{
+												this.checkForYesNo(oProcessedDetail.heldCertifications)
+												}}</span>
+										</div>
+										<div class="Col_2_1">
+											<span>Excess Earnings at Certification: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkForYesNo(oProcessedDetail.maxEarnings)}}</span>
+										</div>
+										<div class="Col_2_2">
+											<span>Workers Comp Reduction: </span><span
+												style="font-style:normal;font-weight:bold;">${{
+												this.checkData(oProcessedDetail.workersCOMPReduction)
+												}}</span>
+										</div>
+										<div class="Col_2_3">
+											<span>Gross Amount: </span><span
+												style="font-style:normal;font-weight:bold;">${{
+												this.checkData(oProcessedDetail.grossAmount)
+												}}</span>
+										</div>
+										<div class="Col_2_4">
+											<span>Pension Reduction: </span><span
+												style="font-style:normal;font-weight:bold;">${{
+												this.checkData(oProcessedDetail.pensionReduction)
+												}}</span>
+										</div>
+										<div class="Col_2_5">
+											<span>Child Support Intercept: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.childSupportIntercept)
+												}}</span>
+										</div>
+										<div class="Col_3_1">
+											<span>State Offset: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.stateOffset)
+												}}</span>
+										</div>
+										<div class="Col_3_2">
+											<span>Irora Offset: </span><span
+												style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.iroraOffset)
+												}}</span><span> </span>
+										</div>
+										<div class="Col_3_3">
+											<span>Forfeit Days: {{
+												this.checkData(oProcessedDetail.forfeitDays)
+												}}</span>
+										</div>
+										<div class="Col_3_4">
+											<span>Forfeit Week: {{
+												this.checkData(oProcessedDetail.forfeitWeek)
+												}}</span>
+										</div>
+										<div class="Col_3_5">
+											<span>Federal Withholding Taxes: </span><span
+												style="font-style:normal;font-weight:bold;"> ${{
+												this.checkData(oProcessedDetail.federalWithholdingTaxes)
+												}}</span><span> </span>
+										</div>
+										<div class="Col_3_6">
+											<span>State Withholding Taxes: </span><span
+												style="font-style:normal;font-weight:bold;"> ${{
+												this.checkData(oProcessedDetail.stateWithholdingTax)
+												}}</span><span> </span>
+										</div>
+										<div class="Col_4_1">
+											<span>Regular Benefits: {{
+												this.checkData(oProcessedDetail.regularBenefits)
+												}}</span>
+										</div>
+										<div class="Col_4_2">
+											<span>Paid Days: </span><span style="font-style:normal;font-weight:bold;">{{
+												this.checkData(oProcessedDetail.paidDays) }}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div style="height:2px;">&nbsp;</div>
+						</div>
+					</div>
+					<div class="ADDITIONAL_DATA">
+						<div class="DISQUALIFICATION_DATA">
+							<div class="GROUPING_HEADER_by">
+								<svg class="Rectangle_6_bz">
+									<rect class="Rectangle_6_bz_1" rx="0" ry="0" x="0" y="0" width="151" height="2">
+									</rect>
+								</svg>
+								<div class="Disqualification_Data_Details">
+									<span>Disqualification Data</span>
+								</div>
+							</div>
+							<div class="Disqualification_Data_grid"
+								*ngIf="!this.checkObjectExist(oClaim.disqualificationData[0])">
+								<div class="disqualification-value">
+									No Data
+								</div>
+							</div>
+							<div class="Disqualification_Data_grid"
+								*ngIf="this.checkObjectExist(oClaim.disqualificationData[0])">
+								<div class="disqualification-field">
+									<span class="disqualification-label">Wilfull Misrepresentation: </span><span
+										class="disqualification-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.disqualificationData[0].wilfullMisrepresentation)
+										}}</span>
+								</div>
+								<div class="disqualification-field">
+									<span class="disqualification-label">Effective Disqualification Date:
+									</span><span class="disqualification-value"
+										style="font-style:normal;font-weight:bold;"> {{
+										this.checkData(oClaim.disqualificationData[0].effectiveDisqualificationDate)
+										}}</span>
+								</div>
+								<div class="disqualification-field">
+									<span class="disqualification-label">Disqualification Type: </span><span
+										class="disqualification-value" style="font-style:normal;font-weight:bold;">
+										{{
+										this.checkData(oClaim.disqualificationData[0].disqualificationType)
+										}}</span>
+								</div>
+								<div class="disqualification-field">
+									<span class="disqualification-label">Disqualification Indicator: </span><span
+										class="disqualification-value" style="font-style:normal;font-weight:bold;">
+										{{
+										this.checkData(oClaim.disqualificationData[0].disqualificationIndicator)
+										}}</span>
+								</div>
+							</div>
+
+						</div>
+						<div class="EMPLOYER_CHARGE_DETAILS">
+							<div class="GROUPING_HEADER_bp">
+								<svg class="Rectangle_6_bq">
+									<rect class="Rectangle_6_bq_1" rx="0" ry="0" x="0" y="0" width="180" height="2">
+									</rect>
+								</svg>
+								<div class="Employer_Charge_Details">
+									<span>Employer Charge Details</span>
+								</div>
+							</div>
+							<div class="Employer-Change-grid">
+								<div class="employer-field">
+									<span class="employer-label">Employer Name: </span>
+									<span class="employer-value">{{ this.checkData(oClaim.employerName) }}</span>
+								</div>
+								<div class="employer-field employer-street-field">
+									<span class="employer-label">Employer Street: </span>
+									<span class="employer-value">{{ this.checkData(oClaim.employerStreet) }}</span>
+								</div>
+								<div class="employer-field">
+									<span class="employer-label">Employer Zip Code: </span>
+									<span class="employer-value">{{ zipCodeFormat(oClaim.employerZipCode) }}</span>
+								</div>
+								<div class="employer-field">
+									<span class="employer-label">Employment Days Charged: </span>
+									<span class="employer-value">
+										<ng-container *ngIf="this.checkObjectExist(oClaim.employerChargeDetails[0])">
+											{{ this.checkData(oClaim.employerChargeDetails[0].employmentDays) }}
+										</ng-container>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="OVER_PAYMENT_DETAILS">
+							<div class="GROUPING_HEADER_bg">
+								<svg class="Rectangle_6_bh">
+									<rect class="Rectangle_6_bh_1" rx="0" ry="0" x="0" y="0" width="157" height="2" />
+								</svg>
+								<div class="Over_Payment_Details">
+									<span>Over Payment Details</span>
+								</div>
+							</div>
+							<div class="Over_Payment_grid" *ngIf="!this.checkObjectExist(oClaim.overPaymentDetails[0])">
+								<div class="over-payment-value">
+									No Data
+								</div>
+							</div>
+							<div class="Over_Payment_grid" *ngIf="this.checkObjectExist(oClaim.overPaymentDetails[0])">
+								<div class="over-payment-field">
+									<span class="over-payment-label">Establishment Date: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.overPaymentDetails[0].established) }}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Overpayment Balance: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">${{
+										this.checkData(oClaim.overPaymentDetails[0].overpaymentBalance) }}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Over Payment Program: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">
+										{{ this.checkData(oClaim.overPaymentDetails[0].overPaymantProgram )}}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Billing Status: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.overPaymentDetails[0].billingStatus) }}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Billing Letter Date: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.billing)
+										}}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Repayment Since Last Billing: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.currentRepayment) }}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Date of Last Update: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.dateOfDetermination) }}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Payment Agreement Date: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;"> {{
+										this.checkData(oClaim.overPaymentDetails[0].installmentDate) }}</span>
+								</div>
+								<div class="over-payment-field">
+									<span class="over-payment-label">Expiration Date: </span><span
+										class="over-payment-value" style="font-style:normal;font-weight:bold;"> {{
+										this.checkData(oClaim.expirationDate) }}</span>
+								</div>
+							</div>
+						</div>
+						<div class="FORFEIT_DATA">
+							<div class="GROUPING_HEADER_FOR">
+								<svg class="Rectangle_6">
+									<rect class="Rectangle_6_1" rx="0" ry="0" x="0" y="0" width="86" height="2">
+									</rect>
+								</svg>
+								<div class="Forfeit_Data_Details">
+									<span>Forfeit Data</span>
+								</div>
+							</div>
+							<div class="Forfeit_Data_grid" *ngIf="!this.checkObjectExist(oClaim.forfeitData[0])">
+								<div class="forfeit-value">
+									No Data
+								</div>
+							</div>
+							<div class="Forfeit_Data_grid" *ngIf="this.checkObjectExist(oClaim.forfeitData[0])">
+								<div class="forfeit-field">
+									<span class="forfeit-label">Forfeit Expiration Week: </span><span
+										class="forfeit-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.forfeitData[0].expirationWeek )}}</span>
+								</div>
+								<div class="forfeit-field">
+									<span class="forfeit-label">Forfeit Weeks: </span><span class="forfeit-value"
+										style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.forfeitData[0].effectiveDays) }}</span>
+								</div>
+								<div class="forfeit-field">
+									<span class="forfeit-label">Forfeit Expiration Week: </span><span
+										class="forfeit-value" style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.forfeitData[0].forfeitExpirationWeek) }}</span>
+								</div>
+								<div class="forfeit-field">
+									<span class="forfeit-label">Forfeit Weeks Used: </span><span class="forfeit-value"
+										style="font-style:normal;font-weight:bold;">{{
+										this.checkData(oClaim.forfeitData[0].forfeitWeeksUsed) }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer id="FOOTER" class="FOOTER">
+	<div id="FOOTER_ga">
+		<svg class="FOOTER_LIGHT" viewBox="0 0 1280 100">
+			<path id="FOOTER_LIGHT" d="M 0 0 L 1280 0 L 1280 100 L 0 100 L 0 0 Z">
+			</path>
+		</svg>
+		<svg class="FOOTER_DARK">
+			<rect id="FOOTER_DARK" rx="0" ry="0" x="0" y="0" width="100%" height="100%">
+			</rect>
+		</svg>
+		<div id="Integrated_Eligibility_System_">
+			<span>Integrated Eligibility System (IES)</span>
+		</div>
+	</div>
+</footer>
